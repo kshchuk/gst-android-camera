@@ -27,8 +27,13 @@ LOCAL_CFLAGS := -DGST_USE_UNSTABLE_API
 LOCAL_MODULE    := android_camera
 LOCAL_SRC_FILES := android_camera.c dummy.cpp
 LOCAL_SHARED_LIBRARIES := gstreamer_android
-LOCAL_LDLIBS := -llog -landroid
+LOCAL_LDLIBS := -llog -landroid -lunwind
 include $(BUILD_SHARED_LIBRARY)
+
+GSTREAMER_ROOT_ANDROID := /home/yaroslav/src/gstreamer/gstreamer-1.0-android-universal-1.23.2
+# GSTREAMER_ROOT_ANDROID := /home/yaroslav/src/gstreamer/gstreamer-1.0-android-universal-1.20.6
+# GSTREAMER_ROOT_ANDROID := /home/yaroslav/src/gstreamer/gstreamer-1.0-android-universal-1.22.2
+# GSTREAMER_ROOT_ANDROID := /home/yaroslav/src/gstreamer/gstreamer-1.0-android-universal-1.18.5
 
 ifeq ($(TARGET_ARCH_ABI),armeabi)
 GSTREAMER_ROOT        := $(GSTREAMER_ROOT_ANDROID)/arm
